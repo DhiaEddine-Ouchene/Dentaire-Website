@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   Base — Système de design Cabinet Dentaire (voir DESIGN.md)
+   ===================================================================== */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sand-50 text-ink-800 antialiased;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Arabe : police dédiée (Cairo) + interlignage un peu plus aéré. */
+  html[lang='ar'] body {
+    font-family: var(--font-arabic), var(--font-sans), sans-serif;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink-900;
+    text-wrap: balance;
+  }
+
+  /* Focus visible cohérent (accessibilité) — anneau couleur de marque. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500/60 ring-offset-2 ring-offset-white;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  /* Respecte les utilisateurs qui réduisent les animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Retourne automatiquement les icônes directionnelles en RTL
+     (flèches « suivant », chevrons…). Ajouter la classe .rtl-flip. */
+  html[dir='rtl'] .rtl-flip {
+    transform: scaleX(-1);
+  }
+}
+
+/* Masquer l'indicateur Next.js en bas de page */
+nextjs-portal,
+[data-nextjs-dev-indicator],
+[data-nextjs-toast],
+.nextjs-toast,
+#nextjs-dev-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}

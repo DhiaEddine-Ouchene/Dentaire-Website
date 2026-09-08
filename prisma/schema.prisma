@@ -1,0 +1,204 @@
+// Schéma Prisma — Cabinet dentaire (mono-tenant : un site par dentiste)
+// Voir PROMPT 1 pour les décisions de modélisation.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // connexion poolée (pgBouncer)
+  directUrl = env("DIRECT_URL") // connexion directe (migrations)
+}
+
+// ─────────────────────────────────────────────
+//  Profil admin (lié à Supabase auth.users via `id`)
+// ─────────────────────────────────────────────
+model Profil {
+  id        String     @id @db.Uuid // = auth.users.id
+  email     String     @unique
+  nom       String?
+  role      RoleProfil @default(DENTISTE)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@map("profils")
+}
+
+// ─────────────────────────────────────────────
+//  Cabinet / Dentiste (singleton : une seule ligne)
+// ─────────────────────────────────────────────
+model Cabinet {
+  id          String  @id @default(uuid()) @db.Uuid
+  nom         String // nom propre, non traduit
+  dentiste    String
+  specialite  Json? // { fr, ar?, en? }
+  description Json? // { fr, ar?, en? }
+  telephone   String
+  email       String?
+  adresse     String
+  ville       String
+  codePostal  String?
+  latitude    Float?
+  longitude   Float?
+  photoUrl    String?
+
+  horaires Horaire[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("cabinets")
+}
+
+model Horaire {
+  id         String      @id @default(uuid()) @db.Uuid
+  cabinet    Cabinet     @relation(fields: [cabinetId], references: [id], onDelete: Cascade)
+  cabinetId  String      @db.Uuid
+  jour       JourSemaine
+  heureDebut String // "08:30"
+  heureFin   String // "12:00"
+
+  @@index([cabinetId, jour])
+  @@map("horaires")
+}
+
+// ─────────────────────────────────────────────
+//  Motif de consultation
+// ─────────────────────────────────────────────
+model Motif {
+  id          String   @id @default(uuid()) @db.Uuid
+  nom         Json // { fr, ar?, en? }  (fr requis côté formulaire)
+  description Json? // { fr, ar?, en? }
+  dureeDefaut Int // minutes
+  prix        Decimal? @db.Decimal(10, 2) // prix en DH (optionnel)
+  couleur     String?
+  actif       Boolean  @default(true)
+  ordre       Int      @default(0)
+
+  rendezVous RendezVous[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("motifs")
+}
+
+// ─────────────────────────────────────────────
+//  Patient (pas de compte — identifié par téléphone)
+// ─────────────────────────────────────────────
+model Patient {
+  id        String  @id @default(uuid()) @db.Uuid
+  nom       String
+  prenom    String?
+  telephone String  @unique // clé d'identification
+  email     String?
+  note      String? @db.Text // note interne du cabinet
+
+  rendezVous RendezVous[]
+  avis       Avis[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("patients")
+}
+
+// ─────────────────────────────────────────────
+//  Rendez-vous
+// ─────────────────────────────────────────────
+model RendezVous {
+  id              String  @id @default(uuid()) @db.Uuid
+  patient         Patient @relation(fields: [patientId], references: [id], onDelete: Restrict)
+  patientId       String  @db.Uuid
+  motif           Motif   @relation(fields: [motifId], references: [id], onDelete: Restrict)
+  motifId         String  @db.Uuid
+  referenceCode   String  @unique // Code court lisible (ex: RDV-4F82A)
+
+  dateDebut       DateTime
+  duree           Int // minutes
+  dateFin         DateTime // = dateDebut + duree (calculée en amont)
+  statut          StatutRendezVous @default(EN_ATTENTE)
+  notes           String?          @db.Text
+  jetonAnnulation String           @unique @default(uuid()) @db.Uuid // lien d'annulation patient
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([dateDebut, dateFin])
+  @@index([statut])
+  @@index([referenceCode])
+  @@map("rendez_vous")
+}
+
+// ─────────────────────────────────────────────
+//  Avis
+// ─────────────────────────────────────────────
+model Avis {
+  id          String     @id @default(uuid()) @db.Uuid
+  patient     Patient?   @relation(fields: [patientId], references: [id], onDelete: SetNull)
+  patientId   String?    @db.Uuid
+  auteur      String // nom affiché
+  note        Int // 1 à 5
+  commentaire String?    @db.Text
+  statut      StatutAvis @default(EN_ATTENTE)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([statut])
+  @@map("avis")
+}
+
+// ─────────────────────────────────────────────
+//  Galerie (cas avant/après)
+// ─────────────────────────────────────────────
+model CasGalerie {
+  id          String  @id @default(uuid()) @db.Uuid
+  titre       Json // { fr, ar?, en? }
+  description Json? // { fr, ar?, en? }
+  categorie   String // whitening, ortho, implant, aesthetic
+  imageBefore String // URL de l'image avant
+  imageAfter  String // URL de l'image après
+  featured    Boolean @default(false)
+  ordre       Int     @default(0)
+  actif       Boolean @default(true)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([categorie, actif])
+  @@map("cas_galerie")
+}
+
+// ─────────────────────────────────────────────
+//  Enums
+// ─────────────────────────────────────────────
+enum RoleProfil {
+  DENTISTE
+  ASSISTANT
+}
+
+enum JourSemaine {
+  LUNDI
+  MARDI
+  MERCREDI
+  JEUDI
+  VENDREDI
+  SAMEDI
+  DIMANCHE
+}
+
+enum StatutRendezVous {
+  EN_ATTENTE
+  CONFIRME
+  ANNULE
+  TERMINE
+  ABSENT
+}
+
+enum StatutAvis {
+  EN_ATTENTE
+  PUBLIE
+  REJETE
+}

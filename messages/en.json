@@ -1,0 +1,413 @@
+{
+  "common": {
+    "appName": "Le Sourire Dental Clinic",
+    "bookAppointment": "Book an appointment",
+    "callUs": "Call us",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "backToHome": "Back to home"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Gallery",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "languageSwitcher": {
+    "label": "Choose language",
+    "fr": "Français",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "footer": {
+    "tagline": "Modern, caring dental treatment for the whole family.",
+    "contact": "Contact",
+    "hours": "Opening hours",
+    "quickLinks": "Navigation",
+    "followUs": "Follow us",
+    "whatsapp": "Chat on WhatsApp",
+    "directions": "Get directions",
+    "closed": "Closed",
+    "rights": "All rights reserved."
+  },
+  "days": {
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday"
+  },
+  "home": {
+    "hero": {
+      "badge": "New patients welcome",
+      "title": "Your smile, in good hands",
+      "subtitle": "A modern practice in Algiers, where gentle care and an attentive team look after the whole family.",
+      "ctaPrimary": "Book an appointment",
+      "ctaSecondary": "Explore our services",
+      "stat1Value": "15+",
+      "stat1Label": "years of experience",
+      "stat2Value": "5,000+",
+      "stat2Label": "patients treated",
+      "stat3Value": "4.9/5",
+      "stat3Label": "patient rating"
+    },
+    "trust": {
+      "eyebrow": "Why choose us",
+      "title": "Care you can trust, no compromise",
+      "description": "Our priority: your comfort and lasting results, in a calm and transparent setting.",
+      "experienceTitle": "Recognised expertise",
+      "experienceText": "Over 15 years of experience and continuous training in the latest dental techniques.",
+      "insuranceTitle": "CNAS & CASNOS accepted",
+      "insuranceText": "A contracted practice, with a clear, detailed quote provided before every treatment.",
+      "technologyTitle": "State-of-the-art technology",
+      "technologyText": "Digital X-rays, 3D imaging and sterilised equipment for precise, safe treatment.",
+      "comfortTitle": "Comfort & peace of mind",
+      "comfortText": "A gentle, attentive team for stress-free appointments, for adults and children alike."
+    },
+    "services": {
+      "eyebrow": "Our services",
+      "title": "A full range of care",
+      "description": "From prevention to aesthetics, we support every step of your oral health.",
+      "durationLabel": "{min} min",
+      "learnMore": "Learn more",
+      "viewAll": "View all services"
+    },
+    "gallery": {
+      "eyebrow": "Before / After",
+      "title": "Results that speak for themselves",
+      "description": "A few transformations carried out at the practice, keeping every smile natural.",
+      "before": "Before",
+      "after": "After",
+      "viewAll": "View the gallery"
+    },
+    "reviews": {
+      "eyebrow": "Google reviews",
+      "title": "What our patients say",
+      "description": "Our patients' trust is our greatest reward.",
+      "basedOn": "Based on {count} Google reviews",
+      "previous": "Previous review",
+      "next": "Next review",
+      "goTo": "Go to review {index}"
+    },
+    "faq": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Have questions?",
+      "description": "Answers to the questions our patients ask most.",
+      "viewAll": "All questions"
+    },
+    "cta": {
+      "title": "Ready to smile again?",
+      "description": "Book your appointment in a few clicks, or call us directly. We're here for you.",
+      "primary": "Book an appointment",
+      "secondary": "Call us"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "Our services",
+      "title": "Our dental care & services",
+      "description": "Complete care, from prevention to aesthetic treatments, designed for your comfort and tailored to every patient."
+    },
+    "durationLabel": "{min} min",
+    "learnMore": "Learn more",
+    "detail": {
+      "back": "All services",
+      "durationLabel": "Estimated duration",
+      "durationValue": "{min} min",
+      "aboutTitle": "What this treatment involves",
+      "expectTitle": "What to expect",
+      "book": "Book this service",
+      "callCta": "Call us",
+      "reassure": "Simple online booking with no obligation. Not sure which treatment you need? We'll advise you.",
+      "otherTitle": "Other services",
+      "viewAll": "View all services"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Before / After",
+      "title": "Transformed smiles",
+      "description": "Explore real results achieved at the practice. Filter by treatment type to see what matters to you."
+    },
+    "filters": {
+      "all": "All",
+      "whitening": "Whitening",
+      "ortho": "Orthodontics",
+      "implant": "Implants",
+      "aesthetic": "Aesthetic"
+    },
+    "before": "Before",
+    "after": "After",
+    "empty": "No cases in this category yet.",
+    "disclaimer": "Cases shown for illustration only. Every situation is unique: a personalised assessment is needed to evaluate your treatment.",
+    "cta": "Book a consultation"
+  },
+  "reservation": {
+    "hero": {
+      "eyebrow": "Book an appointment",
+      "title": "Book online in just a few minutes",
+      "description": "Choose the reason for your visit, a slot that suits you, and leave us your details. Simple, fast and with no obligation."
+    },
+    "steps": {
+      "motif": "Reason",
+      "schedule": "Date & time",
+      "details": "Your details",
+      "confirm": "Confirmation"
+    },
+    "stepCounter": "Step {current} of {total}",
+    "motif": {
+      "title": "What's the reason for your visit?",
+      "subtitle": "Select the treatment you'd like. Not sure? Choose “I'm not sure yet”.",
+      "durationLabel": "{min} min",
+      "unknownTitle": "I'm not sure yet",
+      "unknownDescription": "We'll talk it through together during an assessment consultation."
+    },
+    "schedule": {
+      "title": "Choose your slot",
+      "subtitle": "Pick a date, then an available time.",
+      "durationNote": "Estimated duration: {min} min",
+      "pickDate": "Date",
+      "pickSlot": "Available slots",
+      "loading": "Finding available slots…",
+      "empty": "No slots available that day. Try another date.",
+      "closedHint": "Closing days can't be selected.",
+      "today": "Today",
+      "selectDateFirst": "Please select a date first."
+    },
+    "details": {
+      "title": "Your contact details",
+      "subtitle": "We need these to confirm and remind you of your appointment.",
+      "name": "Full name",
+      "namePlaceholder": "First and last name",
+      "phone": "Phone",
+      "phonePlaceholder": "0555 12 34 56",
+      "email": "Email",
+      "emailOptional": "Email (optional)",
+      "emailPlaceholder": "to receive your confirmation by email",
+      "notes": "Notes (optional)",
+      "notesPlaceholder": "Anything useful for the practitioner?"
+    },
+    "summary": {
+      "title": "Summary",
+      "motif": "Reason",
+      "date": "Date",
+      "time": "Time",
+      "duration": "Duration",
+      "durationValue": "{min} min",
+      "patient": "Patient",
+      "phone": "Phone",
+      "edit": "Edit"
+    },
+    "nav": {
+      "back": "Back",
+      "next": "Continue",
+      "confirm": "Confirm appointment",
+      "submitting": "Sending…"
+    },
+    "errors": {
+      "motifRequired": "Please choose a reason.",
+      "slotRequired": "Please choose a slot.",
+      "nameRequired": "Please enter your name.",
+      "phoneRequired": "Please enter your phone number.",
+      "phoneInvalid": "This phone number looks invalid.",
+      "emailInvalid": "This email address looks invalid.",
+      "generic": "Something went wrong. Please try again."
+    },
+    "confirmation": {
+      "title": "Your request has been recorded!",
+      "subtitle": "We'll confirm your appointment very soon. Here's your summary.",
+      "confirmChannels": "Confirm or share your appointment:",
+      "whatsappCta": "Confirm on WhatsApp",
+      "emailCta": "Send by email",
+      "cancelTitle": "Need to change or cancel?",
+      "cancelText": "Keep this personal link. You can cancel up to {hours} h before the appointment.",
+      "cancelCta": "Manage my appointment",
+      "copyLink": "Copy link",
+      "copied": "Link copied",
+      "newBooking": "Book another appointment",
+      "whatsappMessage": "Hello, I'd like to confirm my appointment request:\n• Reason: {motif}\n• Date: {date} at {time}\n• Name: {name}\n• Phone: {phone}",
+      "emailSubject": "Appointment request — {name}",
+      "emailBody": "Hello,\n\nI'd like to confirm my appointment request:\n- Reason: {motif}\n- Date: {date} at {time}\n- Name: {name}\n- Phone: {phone}\n\nThank you."
+    }
+  },
+  "cancellation": {
+    "title": "Manage my appointment",
+    "lead": "You can cancel your appointment from this page.",
+    "reference": "Reference",
+    "notReady": "Online appointment management is coming soon. For any change or cancellation, contact us directly — we'll be happy to take care of it.",
+    "callCta": "Call the practice",
+    "whatsappCta": "Message on WhatsApp",
+    "home": "Back to home"
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About",
+      "title": "Let's get acquainted",
+      "description": "Behind Le Sourire is a caring team and an attentive practitioner, committed to gentle, lasting treatment."
+    },
+    "intro": {
+      "portraitLabel": "Portrait of Dr. Belkacem",
+      "name": "Dr. Amine Belkacem",
+      "role": "Dental surgeon · Aesthetics & implantology",
+      "p1": "Based in the heart of Algiers, Dr. Amine Belkacem has cared for patients of all ages for over fifteen years. His belief: successful care starts with a relationship of trust, taking the time to listen and explain.",
+      "p2": "Trained in the latest techniques, he puts prevention and comfort at the centre of his practice, so every visit runs smoothly — from the youngest to the most anxious patients.",
+      "highlightsTitle": "In a few words",
+      "highlights": [
+        "Over 15 years of clinical experience",
+        "Practice contracted with CNAS & CASNOS",
+        "Ongoing training in implantology and aesthetics",
+        "A gentle, patient, non-judgemental approach"
+      ]
+    },
+    "journey": {
+      "eyebrow": "Journey",
+      "title": "A career devoted to your smile",
+      "items": [
+        {
+          "year": "2006",
+          "title": "Doctor of dental surgery",
+          "text": "Graduated from the Faculty of Medicine in Algiers, followed by his first years practising alongside patients."
+        },
+        {
+          "year": "2010",
+          "title": "Specialisation in implantology",
+          "text": "Advanced training in implantology and aesthetic rehabilitation, in Algeria and abroad."
+        },
+        {
+          "year": "2013",
+          "title": "Opening of Le Sourire",
+          "text": "Creation of a modern practice in central Algiers, designed for patients' comfort and peace of mind."
+        },
+        {
+          "year": "2024",
+          "title": "A cutting-edge practice",
+          "text": "3D imaging, digital X-rays and a larger team for ever more attentive follow-up."
+        }
+      ]
+    },
+    "philosophy": {
+      "eyebrow": "Care philosophy",
+      "title": "Care designed around you",
+      "description": "Four principles guide every step at the practice, from welcome to the end of treatment.",
+      "values": [
+        {
+          "title": "Attentive",
+          "text": "We take the time to understand your expectations and fears before any decision."
+        },
+        {
+          "title": "Gentle",
+          "text": "Modern techniques and well-managed anaesthesia for painless treatment."
+        },
+        {
+          "title": "Transparent",
+          "text": "A clear, detailed quote, explained item by item, before every treatment."
+        },
+        {
+          "title": "Precise",
+          "text": "Modern equipment for reliable diagnoses and lasting results."
+        }
+      ],
+      "spaces": {
+        "clinicBadge": "The Clinic",
+        "clinicTitle": "A soothing, modern, bright space designed for your comfort",
+        "teamBadge": "Our Team",
+        "teamTitle": "Caring professionals dedicated to your comfort and oral health"
+      }
+    }
+  },
+  "faq": {
+    "hero": {
+      "eyebrow": "Frequently asked questions",
+      "title": "Have questions?",
+      "description": "Find our answers about pain, prices, children and emergencies. Another question? Write to us."
+    },
+    "categories": {
+      "pain": "Pain & comfort",
+      "price": "Price & reimbursement",
+      "children": "Children",
+      "emergency": "Emergencies",
+      "general": "General questions"
+    },
+    "stillQuestion": {
+      "title": "Can't find your answer?",
+      "description": "Our team will be happy to help. Get in touch and we'll get back to you quickly.",
+      "contactCta": "Contact us",
+      "callCta": "Call the practice"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Get in touch",
+      "description": "A question, an appointment request or need information? We're here to listen."
+    },
+    "closed": "Closed",
+    "form": {
+      "title": "Send us a message",
+      "description": "Fill in this form and we'll get back to you as soon as possible.",
+      "name": "Full name",
+      "namePlaceholder": "First and last name",
+      "email": "Email (optional)",
+      "emailPlaceholder": "to receive our reply",
+      "phone": "Phone (optional)",
+      "phonePlaceholder": "0555 12 34 56",
+      "message": "Your message",
+      "messagePlaceholder": "How can we help you?",
+      "submit": "Send message",
+      "submitting": "Sending…",
+      "successTitle": "Your message is ready to send!",
+      "successText": "For an immediate reply, send us your message via WhatsApp. You can also call us directly.",
+      "whatsappCta": "Send via WhatsApp",
+      "newMessage": "Write another message",
+      "whatsappMessage": "Hello, I'm contacting you from your website.\n\nFrom: {name}\n\n{message}",
+      "errors": {
+        "name": "Please enter your name.",
+        "message": "Your message must be at least 10 characters.",
+        "generic": "Something went wrong. Please try again or call us."
+      }
+    },
+    "info": {
+      "title": "Contact details",
+      "addressLabel": "Address",
+      "phoneLabel": "Phone",
+      "emailLabel": "Email",
+      "whatsappCta": "Chat on WhatsApp",
+      "hoursTitle": "Opening hours",
+      "directions": "Directions"
+    },
+    "mapTitle": "Find us"
+  },
+  "admin": {
+    "login": {
+      "brand": "Practitioner area",
+      "title": "Sign in",
+      "subtitle": "Access your practice management.",
+      "email": "Email address",
+      "emailPlaceholder": "you@practice.com",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "errors": {
+        "validation": "Please enter a valid email and password.",
+        "credentials": "Incorrect email or password.",
+        "config": "Authentication isn't configured yet. Add your Supabase credentials."
+      }
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "signedInAs": "Signed in as {email}",
+      "signOut": "Sign out",
+      "placeholderTitle": "Your management area is coming soon",
+      "placeholderText": "The appointment calendar and management tools will be available in the next module."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for doesn't exist or has been moved.",
+    "cta": "Back to home"
+  }
+}

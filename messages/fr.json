@@ -1,0 +1,495 @@
+{
+  "common": {
+    "appName": "Cabinet Dentaire Le Sourire",
+    "bookAppointment": "Prendre rendez-vous",
+    "manageAppointment": "Gérer mon rendez-vous",
+    "callUs": "Appelez-nous",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "backToHome": "Retour à l'accueil"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "gallery": "Galerie",
+    "about": "À propos",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "languageSwitcher": {
+    "label": "Choisir la langue",
+    "fr": "Français",
+    "ar": "العربية",
+    "en": "English"
+  },
+  "footer": {
+    "tagline": "Des soins dentaires modernes et bienveillants, pour toute la famille.",
+    "contact": "Contact",
+    "hours": "Horaires d'ouverture",
+    "quickLinks": "Navigation",
+    "followUs": "Suivez-nous",
+    "whatsapp": "Discuter sur WhatsApp",
+    "directions": "Obtenir l'itinéraire",
+    "closed": "Fermé",
+    "rights": "Tous droits réservés."
+  },
+  "days": {
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche"
+  },
+  "home": {
+    "hero": {
+      "badge": "Nouveaux patients bienvenus",
+      "title": "Votre sourire, entre de bonnes mains",
+      "subtitle": "Un cabinet moderne à Alger, où des soins doux et une équipe à l'écoute prennent soin de toute la famille.",
+      "ctaPrimary": "Prendre rendez-vous",
+      "ctaSecondary": "Découvrir nos services",
+      "stat1Value": "15+",
+      "stat1Label": "ans d'expérience",
+      "stat2Value": "5 000+",
+      "stat2Label": "patients soignés",
+      "stat3Value": "4,9/5",
+      "stat3Label": "note des patients"
+    },
+    "trust": {
+      "eyebrow": "Pourquoi nous choisir",
+      "title": "Des soins de confiance, sans compromis",
+      "description": "Notre priorité : votre confort et des résultats durables, dans un cadre serein et transparent.",
+      "experienceTitle": "Une expertise reconnue",
+      "experienceText": "Plus de 15 ans d'expérience et une formation continue aux dernières techniques dentaires.",
+      "insuranceTitle": "CNAS & CASNOS acceptées",
+      "insuranceText": "Cabinet conventionné, avec un devis clair et détaillé remis avant chaque traitement.",
+      "technologyTitle": "Technologie de pointe",
+      "technologyText": "Radiographie numérique, imagerie 3D et matériel stérilisé pour des soins précis et sûrs.",
+      "comfortTitle": "Confort & sérénité",
+      "comfortText": "Une équipe douce et à l'écoute, pour des rendez-vous sans stress, adultes comme enfants."
+    },
+    "services": {
+      "eyebrow": "Nos services",
+      "title": "Une gamme complète de soins",
+      "description": "De la prévention à l'esthétique, nous accompagnons chaque étape de votre santé bucco-dentaire.",
+      "durationLabel": "{min} min",
+      "learnMore": "En savoir plus",
+      "viewAll": "Voir tous les services"
+    },
+    "gallery": {
+      "eyebrow": "Avant / Après",
+      "title": "Des résultats qui parlent d'eux-mêmes",
+      "description": "Quelques transformations réalisées au cabinet, dans le respect du naturel de chaque sourire.",
+      "before": "Avant",
+      "after": "Après",
+      "viewAll": "Voir la galerie"
+    },
+    "reviews": {
+      "eyebrow": "Avis Google",
+      "title": "Ce que disent nos patients",
+      "description": "La confiance de nos patients est notre plus belle récompense.",
+      "basedOn": "Basé sur {count} avis Google",
+      "previous": "Avis précédent",
+      "next": "Avis suivant",
+      "goTo": "Aller à l'avis {index}"
+    },
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Vous vous posez des questions ?",
+      "description": "Les réponses aux questions les plus courantes de nos patients.",
+      "viewAll": "Toutes les questions"
+    },
+    "cta": {
+      "title": "Prêt à retrouver le sourire ?",
+      "description": "Réservez votre rendez-vous en quelques clics, ou appelez-nous directement. Nous sommes là pour vous.",
+      "primary": "Prendre rendez-vous",
+      "secondary": "Nous appeler"
+    }
+  },
+  "services": {
+    "hero": {
+      "eyebrow": "Nos services",
+      "title": "Nos soins & services",
+      "description": "Une prise en charge complète, de la prévention aux soins esthétiques, pensée pour votre confort et adaptée à chaque patient."
+    },
+    "durationLabel": "{min} min",
+    "learnMore": "En savoir plus",
+    "detail": {
+      "back": "Tous les services",
+      "durationLabel": "Durée estimée",
+      "durationValue": "{min} min",
+      "aboutTitle": "En quoi consiste ce soin ?",
+      "expectTitle": "Ce à quoi vous attendre",
+      "book": "Réserver ce service",
+      "callCta": "Nous appeler",
+      "reassure": "Réservation en ligne simple et sans engagement. Un doute sur le soin adapté ? Nous vous conseillons.",
+      "otherTitle": "Autres soins",
+      "viewAll": "Voir tous les services"
+    }
+  },
+  "gallery": {
+    "hero": {
+      "eyebrow": "Avant / Après",
+      "title": "Des sourires transformés",
+      "description": "Découvrez des résultats concrets, réalisés au cabinet. Filtrez par type de traitement pour voir ce qui vous concerne."
+    },
+    "filters": {
+      "all": "Tous",
+      "whitening": "Blanchiment",
+      "ortho": "Orthodontie",
+      "implant": "Implants",
+      "aesthetic": "Esthétique"
+    },
+    "before": "Avant",
+    "after": "Après",
+    "empty": "Aucun cas dans cette catégorie pour le moment.",
+    "disclaimer": "Cas présentés à titre d'illustration. Chaque situation est unique : un bilan personnalisé est nécessaire pour évaluer votre traitement.",
+    "cta": "Réserver une consultation"
+  },
+  "reservation": {
+    "hero": {
+      "eyebrow": "Prise de rendez-vous",
+      "title": "Réservez en ligne, en quelques minutes",
+      "description": "Choisissez le motif, un créneau qui vous convient, et laissez-nous vos coordonnées. Simple, rapide et sans engagement."
+    },
+    "steps": {
+      "motif": "Motif",
+      "schedule": "Date & heure",
+      "details": "Vos infos",
+      "confirm": "Confirmation"
+    },
+    "stepCounter": "Étape {current} sur {total}",
+    "motif": {
+      "title": "Quel est le motif de votre visite ?",
+      "subtitle": "Sélectionnez le soin souhaité. Vous hésitez ? Choisissez « Je ne sais pas encore ».",
+      "durationLabel": "{min} min",
+      "unknownTitle": "Je ne sais pas encore",
+      "unknownDescription": "Nous en discuterons ensemble lors d'une consultation d'évaluation."
+    },
+    "schedule": {
+      "title": "Choisissez votre créneau",
+      "subtitle": "Sélectionnez une date, puis un horaire disponible.",
+      "durationNote": "Durée estimée : {min} min",
+      "pickDate": "Date",
+      "pickSlot": "Créneaux disponibles",
+      "loading": "Recherche des créneaux…",
+      "empty": "Aucun créneau disponible ce jour-là. Essayez une autre date.",
+      "closedHint": "Les jours de fermeture ne sont pas sélectionnables.",
+      "today": "Auj.",
+      "selectDateFirst": "Sélectionnez d'abord une date."
+    },
+    "details": {
+      "title": "Vos coordonnées",
+      "subtitle": "Nous en avons besoin pour confirmer et vous rappeler votre rendez-vous.",
+      "name": "Nom complet",
+      "namePlaceholder": "Prénom et nom",
+      "phone": "Téléphone",
+      "phonePlaceholder": "0555 12 34 56",
+      "email": "Email",
+      "emailOptional": "Email (optionnel)",
+      "emailPlaceholder": "pour recevoir la confirmation par email",
+      "notes": "Remarques (optionnel)",
+      "notesPlaceholder": "Une information utile pour le praticien ?"
+    },
+    "summary": {
+      "title": "Récapitulatif",
+      "motif": "Motif",
+      "date": "Date",
+      "time": "Heure",
+      "duration": "Durée",
+      "durationValue": "{min} min",
+      "patient": "Patient",
+      "phone": "Téléphone",
+      "edit": "Modifier"
+    },
+    "nav": {
+      "back": "Retour",
+      "next": "Continuer",
+      "confirm": "Confirmer le rendez-vous",
+      "submitting": "Envoi en cours…"
+    },
+    "errors": {
+      "motifRequired": "Veuillez choisir un motif.",
+      "slotRequired": "Veuillez choisir un créneau.",
+      "nameRequired": "Veuillez indiquer votre nom.",
+      "phoneRequired": "Veuillez indiquer votre téléphone.",
+      "phoneInvalid": "Ce numéro de téléphone semble invalide.",
+      "emailInvalid": "Cette adresse email semble invalide.",
+      "generic": "Une erreur est survenue. Veuillez réessayer."
+    },
+    "confirmation": {
+      "title": "Votre demande est enregistrée !",
+      "subtitle": "Nous vous confirmerons votre rendez-vous très vite. Voici votre récapitulatif.",
+      "confirmChannels": "Confirmez ou partagez votre rendez-vous :",
+      "whatsappCta": "Confirmer par WhatsApp",
+      "emailCta": "Envoyer par email",
+      "cancelTitle": "Besoin de modifier ou d'annuler ?",
+      "cancelText": "Conservez ce lien personnel. Vous pouvez annuler jusqu'à {hours} h avant le rendez-vous.",
+      "cancelCta": "Gérer mon rendez-vous",
+      "copyLink": "Copier le lien",
+      "copied": "Lien copié",
+      "newBooking": "Prendre un autre rendez-vous",
+      "whatsappMessage": "Bonjour, je souhaite confirmer ma demande de rendez-vous :\n• Motif : {motif}\n• Date : {date} à {time}\n• Nom : {name}\n• Téléphone : {phone}",
+      "emailSubject": "Demande de rendez-vous — {name}",
+      "emailBody": "Bonjour,\n\nJe souhaite confirmer ma demande de rendez-vous :\n- Motif : {motif}\n- Date : {date} à {time}\n- Nom : {name}\n- Téléphone : {phone}\n\nMerci."
+    }
+  },
+  "cancellation": {
+    "title": "Gérer mon rendez-vous",
+    "lead": "Vous pouvez annuler votre rendez-vous depuis cette page.",
+    "reference": "Référence",
+    "notReady": "La gestion en ligne des rendez-vous sera bientôt disponible. Pour toute modification ou annulation, contactez-nous directement — nous nous en occupons avec plaisir.",
+    "callCta": "Appeler le cabinet",
+    "whatsappCta": "Écrire sur WhatsApp",
+    "home": "Retour à l'accueil"
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "À propos",
+      "title": "Faisons connaissance",
+      "description": "Derrière le Cabinet Le Sourire, une équipe passionnée et un praticien à l'écoute, engagés pour des soins doux et durables."
+    },
+    "intro": {
+      "portraitLabel": "Portrait du Dr. Belkacem",
+      "name": "Dr. Amine Belkacem",
+      "role": "Chirurgien-dentiste · Esthétique & implantologie",
+      "p1": "Installé au cœur d'Alger, le Dr. Amine Belkacem accompagne depuis plus de quinze ans des patients de tous âges. Sa conviction : un soin réussi commence par une relation de confiance, où l'on prend le temps d'écouter et d'expliquer.",
+      "p2": "Formé aux techniques les plus récentes, il place la prévention et le confort au centre de sa pratique, pour que chaque visite se déroule sereinement — des tout-petits aux patients les plus anxieux.",
+      "highlightsTitle": "En quelques mots",
+      "highlights": [
+        "Plus de 15 ans d'expérience clinique",
+        "Cabinet conventionné CNAS & CASNOS",
+        "Formation continue en implantologie et esthétique",
+        "Une approche douce, patiente et sans jugement"
+      ]
+    },
+    "journey": {
+      "eyebrow": "Parcours",
+      "title": "Un parcours au service de votre sourire",
+      "items": [
+        {
+          "year": "2006",
+          "title": "Docteur en chirurgie dentaire",
+          "text": "Diplôme obtenu à la Faculté de médecine d'Alger, suivi des premières années d'exercice au contact des patients."
+        },
+        {
+          "year": "2010",
+          "title": "Spécialisation en implantologie",
+          "text": "Formations approfondies en implantologie et en réhabilitation esthétique, en Algérie et à l'étranger."
+        },
+        {
+          "year": "2013",
+          "title": "Ouverture du Cabinet Le Sourire",
+          "text": "Création d'un cabinet moderne à Alger Centre, pensé pour le confort et la sérénité des patients."
+        },
+        {
+          "year": "2024",
+          "title": "Un cabinet à la pointe",
+          "text": "Imagerie 3D, radiographie numérique et une équipe agrandie pour un suivi toujours plus attentif."
+        }
+      ]
+    },
+    "philosophy": {
+      "eyebrow": "Philosophie de soin",
+      "title": "Des soins pensés pour vous",
+      "description": "Quatre principes guident chaque geste au cabinet, de l'accueil à la fin du traitement.",
+      "values": [
+        {
+          "title": "À l'écoute",
+          "text": "On prend le temps de comprendre vos attentes et vos craintes avant toute décision."
+        },
+        {
+          "title": "En douceur",
+          "text": "Des techniques modernes et une anesthésie maîtrisée pour des soins sans douleur."
+        },
+        {
+          "title": "En toute transparence",
+          "text": "Un devis clair et détaillé, expliqué poste par poste, avant chaque traitement."
+        },
+        {
+          "title": "Avec précision",
+          "text": "Un plateau technique moderne pour des diagnostics fiables et des résultats durables."
+        }
+      ],
+      "spaces": {
+        "clinicBadge": "Le Cabinet",
+        "clinicTitle": "Un environnement apaisant, moderne et lumineux pensé pour votre confort",
+        "teamBadge": "Notre Équipe",
+        "teamTitle": "Des professionnels attentionnés à votre écoute pour chaque étape de vos soins"
+      }
+    }
+  },
+  "faq": {
+    "hero": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Vous avez des questions ?",
+      "description": "Retrouvez nos réponses sur la douleur, les prix, les enfants et les urgences. Une autre question ? Écrivez-nous."
+    },
+    "categories": {
+      "pain": "Douleur & confort",
+      "price": "Prix & remboursement",
+      "children": "Enfants",
+      "emergency": "Urgences",
+      "general": "Questions générales"
+    },
+    "stillQuestion": {
+      "title": "Vous ne trouvez pas votre réponse ?",
+      "description": "Notre équipe se fera un plaisir de vous répondre. Contactez-nous, nous revenons vers vous rapidement.",
+      "contactCta": "Nous contacter",
+      "callCta": "Appeler le cabinet"
+    }
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "title": "Nous contacter",
+      "description": "Une question, une demande de rendez-vous ou besoin d'informations ? Nous sommes à votre écoute."
+    },
+    "closed": "Fermé",
+    "form": {
+      "title": "Envoyez-nous un message",
+      "description": "Remplissez ce formulaire, nous vous répondrons dans les plus brefs délais.",
+      "name": "Nom complet",
+      "namePlaceholder": "Nom et prénom",
+      "email": "E-mail (optionnel)",
+      "emailPlaceholder": "pour recevoir notre réponse",
+      "phone": "Téléphone (optionnel)",
+      "phonePlaceholder": "0555 12 34 56",
+      "message": "Votre message",
+      "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi…",
+      "successTitle": "Message prêt à être envoyé !",
+      "successText": "Pour un traitement immédiat, envoyez-nous votre message via WhatsApp. Vous pouvez aussi nous appeler directement.",
+      "whatsappCta": "Envoyer via WhatsApp",
+      "newMessage": "Écrire un autre message",
+      "whatsappMessage": "Bonjour, je vous contacte depuis votre site.\n\nDe : {name}\n\n{message}",
+      "errors": {
+        "name": "Merci d'indiquer votre nom.",
+        "message": "Votre message doit contenir au moins 10 caractères.",
+        "generic": "Une erreur est survenue. Merci de réessayer ou de nous appeler."
+      }
+    },
+    "info": {
+      "title": "Coordonnées",
+      "addressLabel": "Adresse",
+      "phoneLabel": "Téléphone",
+      "emailLabel": "E-mail",
+      "whatsappCta": "Discuter sur WhatsApp",
+      "hoursTitle": "Horaires d'ouverture",
+      "directions": "Itinéraire"
+    },
+    "mapTitle": "Nous trouver"
+  },
+  "admin": {
+    "login": {
+      "brand": "Espace praticien",
+      "title": "Connexion",
+      "subtitle": "Accédez à la gestion de votre cabinet.",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "vous@cabinet.dz",
+      "password": "Mot de passe",
+      "submit": "Se connecter",
+      "submitting": "Connexion…",
+      "errors": {
+        "validation": "Veuillez saisir une adresse e-mail et un mot de passe valides.",
+        "credentials": "E-mail ou mot de passe incorrect.",
+        "config": "L'authentification n'est pas encore configurée. Ajoutez vos identifiants Supabase."
+      }
+    },
+    "dashboard": {
+      "title": "Tableau de bord",
+      "signedInAs": "Connecté en tant que {email}",
+      "signOut": "Se déconnecter",
+      "placeholderTitle": "Votre espace de gestion arrive bientôt",
+      "placeholderText": "L'agenda des rendez-vous et les outils de gestion seront disponibles dans le prochain module."
+    },
+    "nav": {
+      "brand": "Cabinet Le Sourire",
+      "openMenu": "Ouvrir le menu",
+      "closeMenu": "Fermer le menu",
+      "appointments": "Rendez-vous",
+      "patients": "Patients",
+      "motifs": "Motifs & Durées",
+      "gallery": "Galerie",
+      "reviews": "Avis",
+      "stats": "Statistiques",
+      "settings": "Paramètres",
+      "signOut": "Se déconnecter"
+    },
+    "calendar": {
+      "title": "Agenda des rendez-vous",
+      "today": "Aujourd'hui",
+      "viewDay": "Jour",
+      "viewWeek": "Semaine",
+      "addAppointment": "Nouveau RDV",
+      "noAppointments": "Aucun rendez-vous ce jour",
+      "status": {
+        "CONFIRME": "Confirmé",
+        "ANNULE": "Annulé",
+        "TERMINE": "Terminé"
+      }
+    },
+    "appointments": {
+      "addTitle": "Nouveau rendez-vous",
+      "editTitle": "Modifier le rendez-vous",
+      "form": {
+        "motif": "Motif de consultation",
+        "selectMotif": "Sélectionnez un motif",
+        "date": "Date",
+        "time": "Heure",
+        "patientInfo": "Informations patient",
+        "patientName": "Nom complet",
+        "patientNamePlaceholder": "Ex: Ahmed Benali",
+        "patientPhone": "Téléphone",
+        "patientPhonePlaceholder": "Ex: 0555 12 34 56",
+        "patientEmailOptional": "E-mail (optionnel)",
+        "patientEmailPlaceholder": "patient@exemple.dz",
+        "notes": "Notes (optionnel)",
+        "notesPlaceholder": "Allergies, remarques particulières...",
+        "close": "Fermer",
+        "create": "Créer le rendez-vous",
+        "saveChanges": "Enregistrer",
+        "saving": "Enregistrement…",
+        "cancelAppointment": "Annuler le RDV",
+        "cancelling": "Annulation…"
+      },
+      "errors": {
+        "generic": "Une erreur est survenue. Veuillez réessayer.",
+        "cancelFailed": "Impossible d'annuler le rendez-vous."
+      }
+    },
+    "motifs": {
+      "title": "Motifs de consultation",
+      "subtitle": "Gérez les types de soins et leurs durées par défaut",
+      "addMotif": "Nouveau motif",
+      "addTitle": "Ajouter un motif",
+      "editTitle": "Modifier le motif",
+      "nameFr": "Nom (français)",
+      "nameAr": "Nom (arabe)",
+      "nameEn": "Nom (anglais)",
+      "duration": "Durée (minutes)",
+      "active": "Actif",
+      "inactive": "Inactif",
+      "edit": "Modifier",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "saving": "Enregistrement…",
+      "confirmDelete": "Supprimer ce motif ? Cette action est irréversible."
+    },
+    "stats": {
+      "title": "Statistiques",
+      "subtitle": "Aperçu de l'activité du cabinet",
+      "totalAppointments": "Rendez-vous",
+      "last30Days": "Ces 30 derniers jours",
+      "topMotif": "Motif le plus demandé",
+      "requestedTimes": "{count} fois"
+    }
+  },
+  "notFound": {
+    "title": "Page introuvable",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "cta": "Retour à l'accueil"
+  }
+}
