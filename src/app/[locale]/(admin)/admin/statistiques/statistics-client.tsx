@@ -179,7 +179,7 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
             <StatCard
               icon={<DollarSign className="h-6 w-6" />}
               title={t('revenue')}
-              value={`${stats.overview.revenue.toFixed(2)} DH`}
+              value={`${stats.overview.revenue.toFixed(2)} DZD`}
               color="success"
             />
           </div>
@@ -200,7 +200,7 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
                   <YAxis tick={{ fill: '#6B7280', fontSize: 12 }} />
                   <Tooltip
                     contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '8px' }}
-                    formatter={(value: any) => [`${value.toFixed(2)} DH`, t('revenue')]}
+                    formatter={(value: any) => [`${value.toFixed(2)} DZD`, t('revenue')]}
                   />
                   <Line type="monotone" dataKey="revenue" stroke={COLORS.primary} strokeWidth={2} dot={{ fill: COLORS.primary }} />
                 </LineChart>
@@ -284,7 +284,7 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
                     </Pie>
                     <Tooltip
                       contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '8px' }}
-                      formatter={(value: any, name: string | number | undefined, props: any) => [`${value.toFixed(2)} DH`, props?.payload?.nom ? getContenu(props.payload.nom, locale) : name?.toString() || '']}
+                      formatter={(value: any, name: string | number | undefined, props: any) => [`${value.toFixed(2)} DZD`, props?.payload?.nom ? getContenu(props.payload.nom, locale) : name?.toString() || '']}
                     />
                     <Legend
                       formatter={(value, entry: any) => getContenu(entry.payload.nom, locale).substring(0, 25)}

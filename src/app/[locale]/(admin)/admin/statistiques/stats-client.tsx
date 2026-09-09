@@ -94,7 +94,7 @@ export function StatsClient({ stats, locale }: StatsClientProps) {
           <StatCard
             icon={<DollarSign className="h-6 w-6" />}
             title={locale === 'ar' ? 'الإيرادات' : locale === 'en' ? 'Revenue' : 'Revenus'}
-            value={`${currentStats.revenue.toFixed(2)} DH`}
+            value={`${currentStats.revenue.toFixed(2)} DZD`}
             description={getPeriodLabel(period, locale)}
           />
           {stats.topMotif && (
