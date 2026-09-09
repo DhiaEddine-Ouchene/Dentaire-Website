@@ -5,13 +5,32 @@ import { revalidatePath } from 'next/cache';
 import { z } from 'zod';
 
 const avisSchema = z.object({
-  auteur: z.string().min(2, 'Le nom est requis'),
-  note: z.number().min(1).max(5),
-  commentaire: z.string().min(10, 'Le commentaire doit contenir au moins 10 caractères').optional(),
-  telephone: z.string().optional()
+  auteur: z.string().trim().min(2, 'Le nom est requis'),
+  note: z.number().min(1, 'La note est requise').max(5),
+  commentaire: z
+    .string()
+    .optional()
+    .nullable()
+    .transform((v) => {
+      const trimmed = v?.trim();
+      return trimmed && trimmed.length > 0 ? trimmed : null;
+    }),
+  telephone: z
+    .string()
+    .optional()
+    .nullable()
+    .transform((v) => {
+      const trimmed = v?.trim();
+      return trimmed && trimmed.length > 0 ? trimmed : null;
+    })
 });
 
-export async function submitReview(data: z.infer<typeof avisSchema>) {
+export async function submitReview(data: {
+  auteur: string;
+  note: number;
+  commentaire?: string | null;
+  telephone?: string | null;
+}) {
   try {
     const validated = avisSchema.parse(data);
 
@@ -28,7 +47,7 @@ export async function submitReview(data: z.infer<typeof avisSchema>) {
       data: {
         auteur: validated.auteur,
         note: validated.note,
-        commentaire: validated.commentaire || null,
+        commentaire: validated.commentaire,
         patientId: patientId || null,
         statut: 'EN_ATTENTE'
       }
@@ -38,6 +57,10 @@ export async function submitReview(data: z.infer<typeof avisSchema>) {
     return { success: true };
   } catch (error) {
     console.error('Erreur soumission avis:', error);
+    if (error instanceof z.ZodError) {
+      return { success: false, error: error.errors[0]?.message || 'Données invalides' };
+    }
     return { success: false, error: 'Erreur lors de la soumission de votre avis' };
   }
 }
+

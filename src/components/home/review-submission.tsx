@@ -15,9 +15,17 @@ export function ReviewSubmissionSection({ locale }: ReviewSectionProps) {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showForm, setShowForm] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setErrorMessage(null);
+
+    if (rating === 0) {
+      setErrorMessage(t('errorRating'));
+      return;
+    }
+
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
@@ -28,16 +36,20 @@ export function ReviewSubmissionSection({ locale }: ReviewSectionProps) {
       telephone: formData.get('telephone') as string
     };
 
-    const result = await submitReview(data);
-    setLoading(false);
-
-    if (result.success) {
-      setSubmitted(true);
-      setShowForm(false);
-      (e.target as HTMLFormElement).reset();
-      setRating(0);
-    } else {
-      alert(result.error);
+    try {
+      const result = await submitReview(data);
+      if (result.success) {
+        setSubmitted(true);
+        setShowForm(false);
+        setRating(0);
+        setErrorMessage(null);
+      } else {
+        setErrorMessage(result.error || t('errorGeneric'));
+      }
+    } catch {
+      setErrorMessage(t('errorGeneric'));
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -111,6 +123,16 @@ export function ReviewSubmissionSection({ locale }: ReviewSectionProps) {
       fr: 'Fermer',
       ar: 'إغلاق',
       en: 'Close'
+    },
+    errorGeneric: {
+      fr: 'Une erreur est survenue lors de la soumission de votre avis.',
+      ar: 'حدث خطأ أثناء إرسال تقييمك.',
+      en: 'An error occurred while submitting your review.'
+    },
+    errorRating: {
+      fr: 'Veuillez sélectionner une note.',
+      ar: 'يرجى تحديد تقييم.',
+      en: 'Please select a rating.'
     }
   };
 
@@ -218,11 +240,16 @@ export function ReviewSubmissionSection({ locale }: ReviewSectionProps) {
               <textarea
                 name="commentaire"
                 rows={4}
-                minLength={10}
                 placeholder={t('commentPlaceholder')}
                 className="w-full rounded-lg border border-ink-200 px-4 py-3 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-100 transition-colors resize-none"
               />
             </div>
+
+            {errorMessage && (
+              <div className="rounded-xl border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+                {errorMessage}
+              </div>
+            )}
 
             <div className="flex gap-3 pt-2">
               <button
