@@ -404,6 +404,87 @@
       "signOut": "تسجيل الخروج",
       "placeholderTitle": "مساحة الإدارة الخاصة بك قادمة قريبًا",
       "placeholderText": "سيتوفر تقويم المواعيد وأدوات الإدارة في الوحدة التالية."
+    },
+    "nav": {
+      "brand": "عيادة الابتسامة",
+      "openMenu": "فتح القائمة",
+      "closeMenu": "إغلاق القائمة",
+      "appointments": "المواعيد",
+      "patients": "المرضى",
+      "motifs": "أسباب الاستشارة والمدد",
+      "gallery": "المعرض",
+      "reviews": "التقييمات",
+      "stats": "الإحصائيات",
+      "settings": "الإعدادات",
+      "signOut": "تسجيل الخروج"
+    },
+    "calendar": {
+      "title": "جدول المواعيد",
+      "today": "اليوم",
+      "viewDay": "يوم",
+      "viewWeek": "أسبوع",
+      "addAppointment": "موعد جديد",
+      "noAppointments": "لا توجد مواعيد لهذا اليوم",
+      "status": {
+        "CONFIRME": "مؤكد",
+        "ANNULE": "ملغى",
+        "TERMINE": "مكتمل"
+      }
+    },
+    "appointments": {
+      "addTitle": "موعد جديد",
+      "editTitle": "تعديل الموعد",
+      "form": {
+        "motif": "سبب الاستشارة",
+        "selectMotif": "اختر سبب الاستشارة",
+        "date": "التاريخ",
+        "time": "الوقت",
+        "patientInfo": "معلومات المريض",
+        "patientName": "الاسم الكامل",
+        "patientNamePlaceholder": "مثال: أحمد بن علي",
+        "patientPhone": "رقم الهاتف",
+        "patientPhonePlaceholder": "مثال: 0555 12 34 56",
+        "patientEmailOptional": "البريد الإلكتروني (اختياري)",
+        "patientEmailPlaceholder": "patient@example.dz",
+        "notes": "ملاحظات (اختياري)",
+        "notesPlaceholder": "حساسية، ملاحظات خاصة...",
+        "close": "إغلاق",
+        "create": "إنشاء الموعد",
+        "saveChanges": "حفظ التغييرات",
+        "saving": "جارٍ الحفظ…",
+        "cancelAppointment": "إلغاء الموعد",
+        "cancelling": "جارٍ الإلغاء…"
+      },
+      "errors": {
+        "generic": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+        "cancelFailed": "تعذر إلغاء الموعد."
+      }
+    },
+    "motifs": {
+      "title": "أسباب الاستشارة",
+      "subtitle": "إدارة أنواع العلاجات ومددها الافتراضية",
+      "addMotif": "سبب جديد",
+      "addTitle": "إضافة سبب",
+      "editTitle": "تعديل السبب",
+      "nameFr": "الاسم (بالفرنسية)",
+      "nameAr": "الاسم (بالعربية)",
+      "nameEn": "الاسم (بالإنجليزية)",
+      "duration": "المدة (بالدقائق)",
+      "active": "نشط",
+      "inactive": "غير نشط",
+      "edit": "تعديل",
+      "cancel": "إلغاء",
+      "save": "حفظ",
+      "saving": "جارٍ الحفظ…",
+      "confirmDelete": "هل تريد حذف هذا السبب؟ لا يمكن التراجع عن هذا الإجراء."
+    },
+    "stats": {
+      "title": "الإحصائيات",
+      "subtitle": "نظرة عامة على نشاط العيادة",
+      "totalAppointments": "المواعيد",
+      "last30Days": "خلال الـ 30 يومًا الماضية",
+      "topMotif": "السبب الأكثر طلبًا",
+      "requestedTimes": "{count} مرات"
     }
   },
   "notFound": {

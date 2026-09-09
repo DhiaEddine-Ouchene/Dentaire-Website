@@ -404,6 +404,87 @@
       "signOut": "Sign out",
       "placeholderTitle": "Your management area is coming soon",
       "placeholderText": "The appointment calendar and management tools will be available in the next module."
+    },
+    "nav": {
+      "brand": "Le Sourire Dental Clinic",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "appointments": "Appointments",
+      "patients": "Patients",
+      "motifs": "Reasons & Durations",
+      "gallery": "Gallery",
+      "reviews": "Reviews",
+      "stats": "Statistics",
+      "settings": "Settings",
+      "signOut": "Sign out"
+    },
+    "calendar": {
+      "title": "Appointment Calendar",
+      "today": "Today",
+      "viewDay": "Day",
+      "viewWeek": "Week",
+      "addAppointment": "New Appointment",
+      "noAppointments": "No appointments scheduled for this day",
+      "status": {
+        "CONFIRME": "Confirmed",
+        "ANNULE": "Cancelled",
+        "TERMINE": "Completed"
+      }
+    },
+    "appointments": {
+      "addTitle": "New Appointment",
+      "editTitle": "Edit Appointment",
+      "form": {
+        "motif": "Reason for visit",
+        "selectMotif": "Select a reason",
+        "date": "Date",
+        "time": "Time",
+        "patientInfo": "Patient information",
+        "patientName": "Full name",
+        "patientNamePlaceholder": "e.g. John Doe",
+        "patientPhone": "Phone number",
+        "patientPhonePlaceholder": "e.g. +213 555 12 34 56",
+        "patientEmailOptional": "Email (optional)",
+        "patientEmailPlaceholder": "patient@example.com",
+        "notes": "Notes (optional)",
+        "notesPlaceholder": "Allergies, special requests...",
+        "close": "Close",
+        "create": "Book appointment",
+        "saveChanges": "Save changes",
+        "saving": "Saving…",
+        "cancelAppointment": "Cancel appointment",
+        "cancelling": "Cancelling…"
+      },
+      "errors": {
+        "generic": "An error occurred. Please try again.",
+        "cancelFailed": "Unable to cancel the appointment."
+      }
+    },
+    "motifs": {
+      "title": "Reasons for Visit",
+      "subtitle": "Manage consultation types and default durations",
+      "addMotif": "New Reason",
+      "addTitle": "Add Reason",
+      "editTitle": "Edit Reason",
+      "nameFr": "Name (French)",
+      "nameAr": "Name (Arabic)",
+      "nameEn": "Name (English)",
+      "duration": "Duration (minutes)",
+      "active": "Active",
+      "inactive": "Inactive",
+      "edit": "Edit",
+      "cancel": "Cancel",
+      "save": "Save",
+      "saving": "Saving…",
+      "confirmDelete": "Delete this reason? This action cannot be undone."
+    },
+    "stats": {
+      "title": "Statistics",
+      "subtitle": "Overview of practice activity",
+      "totalAppointments": "Appointments",
+      "last30Days": "Last 30 days",
+      "topMotif": "Most requested reason",
+      "requestedTimes": "{count} times"
     }
   },
   "notFound": {
