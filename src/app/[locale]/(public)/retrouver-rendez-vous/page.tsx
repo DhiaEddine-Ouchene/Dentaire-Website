@@ -4,7 +4,6 @@ import { FindAppointmentClient } from './find-appointment-client';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'findAppointment' });
 
   const titles: Record<string, string> = {
     fr: 'Retrouver mon rendez-vous',

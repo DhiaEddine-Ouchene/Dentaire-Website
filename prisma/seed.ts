@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, JourSemaine } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -44,13 +44,13 @@ async function main() {
 
   // 3. Créer les horaires (dimanche à jeudi : 8h-17h, vendredi fermé, samedi 9h-13h)
   console.log('🕐 Création des horaires...');
-  const horaires = [
-    { jour: 'DIMANCHE', heureDebut: '08:00', heureFin: '17:00' },
-    { jour: 'LUNDI', heureDebut: '08:00', heureFin: '17:00' },
-    { jour: 'MARDI', heureDebut: '08:00', heureFin: '17:00' },
-    { jour: 'MERCREDI', heureDebut: '08:00', heureFin: '17:00' },
-    { jour: 'JEUDI', heureDebut: '08:00', heureFin: '17:00' },
-    { jour: 'SAMEDI', heureDebut: '09:00', heureFin: '13:00' }
+  const horaires: Array<{ jour: JourSemaine; heureDebut: string; heureFin: string }> = [
+    { jour: JourSemaine.DIMANCHE, heureDebut: '08:00', heureFin: '17:00' },
+    { jour: JourSemaine.LUNDI, heureDebut: '08:00', heureFin: '17:00' },
+    { jour: JourSemaine.MARDI, heureDebut: '08:00', heureFin: '17:00' },
+    { jour: JourSemaine.MERCREDI, heureDebut: '08:00', heureFin: '17:00' },
+    { jour: JourSemaine.JEUDI, heureDebut: '08:00', heureFin: '17:00' },
+    { jour: JourSemaine.SAMEDI, heureDebut: '09:00', heureFin: '13:00' }
   ];
 
   for (const h of horaires) {
