@@ -13,7 +13,7 @@ export async function generateMetadata() {
 export default async function StatistiquesPage({
   searchParams
 }: {
-  searchParams: { period?: string; start?: string; end?: string };
+  searchParams: Promise<{ period?: string; start?: string; end?: string }>;
 }) {
   const supabase = await createClient();
   const locale = await getLocale();
@@ -26,9 +26,11 @@ export default async function StatistiquesPage({
     redirect('/admin/login');
   }
 
-  const period = (searchParams.period as 'day' | 'week' | 'month' | 'custom') || 'month';
-  const customStart = searchParams.start ? new Date(searchParams.start) : undefined;
-  const customEnd = searchParams.end ? new Date(searchParams.end) : undefined;
+  // Await searchParams (Next.js 15 App Router)
+  const params = await searchParams;
+  const period = (params.period as 'day' | 'week' | 'month' | 'custom') || 'month';
+  const customStart = params.start ? new Date(params.start) : undefined;
+  const customEnd = params.end ? new Date(params.end) : undefined;
 
   const stats = await getAllStatistics(period, customStart, customEnd);
 

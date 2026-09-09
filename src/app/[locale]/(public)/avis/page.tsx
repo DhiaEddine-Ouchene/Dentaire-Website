@@ -8,8 +8,8 @@ import { Star } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 
-export async function generateMetadata({ params }: { params: { locale: string } }) {
-  const locale = params.locale;
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const titles = {
     fr: 'Avis et Témoignages',
     ar: 'الآراء والشهادات',
