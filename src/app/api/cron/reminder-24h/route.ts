@@ -3,15 +3,23 @@ import { prisma } from '@/lib/prisma';
 
 /**
  * Cron job : rappels automatiques 24h avant le rendez-vous (PROMPT 14).
- * À configurer dans vercel.json ou via l'interface Vercel Cron.
- * Déclenché quotidiennement, ex: à 9h.
+ * Déclenché par un service cron externe (ex: cron-job.org).
+ *
+ * Sécurité : Requiert un header `x-cron-secret` correspondant à CRON_SECRET.
  */
 export async function GET(request: Request) {
-  // Vérification du secret Vercel Cron
-  const authHeader = request.headers.get('authorization');
+  // Vérification du secret pour les services cron externes
+  const cronSecretHeader = request.headers.get('x-cron-secret');
   const cronSecret = process.env.CRON_SECRET;
 
-  if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+  // Si CRON_SECRET est défini, il doit correspondre au header
+  if (!cronSecret) {
+    console.warn('⚠️ CRON_SECRET non défini - route cron non protégée');
+    return NextResponse.json({ error: 'CRON_SECRET not configured' }, { status: 500 });
+  }
+
+  if (cronSecretHeader !== cronSecret) {
+    console.error('❌ Tentative d\'accès non autorisée à la route cron');
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 

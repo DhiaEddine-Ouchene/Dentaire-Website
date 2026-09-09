@@ -1,12 +1,1 @@
-{
-  "crons": [
-    {
-      "path": "/api/cron/reminder-24h",
-      "schedule": "0 9 * * *"
-    },
-    {
-      "path": "/api/cron/reminder-2h",
-      "schedule": "0 * * * *"
-    }
-  ]
-}
+{}

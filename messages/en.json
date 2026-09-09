@@ -2,6 +2,7 @@
   "common": {
     "appName": "Le Sourire Dental Clinic",
     "bookAppointment": "Book an appointment",
+    "manageAppointment": "Manage My Appointment",
     "callUs": "Call us",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",

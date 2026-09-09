@@ -2,6 +2,7 @@
   "common": {
     "appName": "عيادة الأسنان الابتسامة",
     "bookAppointment": "حجز موعد",
+    "manageAppointment": "إدارة موعدي",
     "callUs": "اتصل بنا",
     "openMenu": "فتح القائمة",
     "closeMenu": "إغلاق القائمة",
