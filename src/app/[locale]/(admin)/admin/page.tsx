@@ -31,14 +31,15 @@ export default async function AdminDashboardPage() {
     return null;
   }
 
-  // Charger les rendez-vous des 30 prochains jours
+  // Charger les rendez-vous des 30 derniers jours et 30 prochains jours (pour couvrir aujourd'hui, hier et les semaines à venir)
   const now = new Date();
+  const startDate = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
   const endDate = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000);
 
   const appointments = await prisma.rendezVous.findMany({
     where: {
       dateDebut: {
-        gte: now,
+        gte: startDate,
         lte: endDate
       }
     },

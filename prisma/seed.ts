@@ -228,8 +228,15 @@ async function main() {
     });
   }
 
-  // Rendez-vous à venir (CONFIRME) - 5 prochains jours avec densité variée
+  // Rendez-vous à venir (CONFIRME) - Aujourd'hui et les 5 prochains jours avec densité variée
   const upcomingAppointments = [
+    // Aujourd'hui (Jour 0) : Rendez-vous du jour pour la démonstration
+    { daysAhead: 0, hour: 9, minute: 0, patient: 0, motif: 0 },
+    { daysAhead: 0, hour: 10, minute: 30, patient: 1, motif: 1 },
+    { daysAhead: 0, hour: 11, minute: 30, patient: 2, motif: 2 },
+    { daysAhead: 0, hour: 14, minute: 0, patient: 3, motif: 4 },
+    { daysAhead: 0, hour: 15, minute: 30, patient: 4, motif: 6 },
+
     // Jour +1 : Journée chargée (6 RDV)
     { daysAhead: 1, hour: 8, minute: 30, patient: 0, motif: 0 },
     { daysAhead: 1, hour: 9, minute: 30, patient: 1, motif: 1 },
@@ -332,60 +339,66 @@ async function main() {
     await prisma.avis.create({ data: a });
   }
 
-  // 8. Créer les photos de galerie
+  // 8. Créer les photos de galerie avec les images existantes du projet
   console.log('📸 Création de la galerie...');
   const galerieItems = [
     {
       titre: { fr: 'Blanchiment dentaire - Résultats spectaculaires', ar: 'تبييض الأسنان - نتائج مذهلة', en: 'Teeth whitening - Spectacular results' },
-      description: { fr: 'Blanchiment professionnel en une séance', ar: 'تبييض احترافي في جلسة واحدة', en: 'Professional whitening in one session' },
+      description: { fr: 'Blanchiment professionnel en une séance, 3 teintes gagnées', ar: 'تبييض احترافي في جلسة واحدة', en: 'Professional whitening in one session' },
       categorie: 'whitening',
-      imageBefore: 'https://placehold.co/800x600/e0e0e0/666666?text=Avant+Blanchiment',
-      imageAfter: 'https://placehold.co/800x600/ffffff/666666?text=Apr%C3%A8s+Blanchiment',
+      imageBefore: '/images/gallery/whitening-before.jpg',
+      imageAfter: '/images/gallery/whitening-after.jpg',
+      featured: true,
       ordre: 1,
       actif: true
     },
     {
-      titre: { fr: 'Blanchiment - Transformation éclatante', ar: 'تبييض - تحول مشرق', en: 'Whitening - Brilliant transformation' },
-      description: { fr: 'Sourire éclatant après traitement', ar: 'ابتسامة مشرقة بعد العلاج', en: 'Radiant smile after treatment' },
-      categorie: 'whitening',
-      imageBefore: 'https://placehold.co/800x600/d4d4d4/555555?text=Avant',
-      imageAfter: 'https://placehold.co/800x600/fafafa/555555?text=Apr%C3%A8s',
+      titre: { fr: 'Orthodontie - Correction et alignement réussi', ar: 'تقويم الأسنان - تصحيح ومحاذاة ناجحة', en: 'Orthodontics - Successful correction' },
+      description: { fr: 'Alignement parfait après 18 mois de traitement', ar: 'محاذاة مثالية بعد 18 شهرًا من العلاج', en: 'Perfect alignment after 18 months of treatment' },
+      categorie: 'ortho',
+      imageBefore: '/images/gallery/ortho-before.jpg',
+      imageAfter: '/images/gallery/ortho-after.jpg',
+      featured: true,
       ordre: 2,
       actif: true
     },
     {
-      titre: { fr: 'Orthodontie - Correction réussie', ar: 'تقويم الأسنان - تصحيح ناجح', en: 'Orthodontics - Successful correction' },
-      description: { fr: 'Alignement parfait après 18 mois de traitement', ar: 'محاذاة مثالية بعد 18 شهرًا من العلاج', en: 'Perfect alignment after 18 months of treatment' },
-      categorie: 'ortho',
-      imageBefore: 'https://placehold.co/800x600/e8e8e8/777777?text=Avant+Ortho',
-      imageAfter: 'https://placehold.co/800x600/f5f5f5/777777?text=Apr%C3%A8s+Ortho',
+      titre: { fr: 'Implants dentaires - Pose unitaire réussie', ar: 'زراعة الأسنان - نجاح الزرع المفرد', en: 'Dental implants - Successful placement' },
+      description: { fr: 'Restauration complète avec implant et couronne céramique', ar: 'ترميم كامل بالزرعات والتاج الخزفي', en: 'Complete restoration with implants' },
+      categorie: 'implant',
+      imageBefore: '/images/gallery/implant-before.png',
+      imageAfter: '/images/gallery/implant-after.png',
+      featured: true,
       ordre: 3,
       actif: true
     },
     {
-      titre: { fr: 'Orthodontie adolescent', ar: 'تقويم الأسنان للمراهقين', en: 'Teen orthodontics' },
-      description: { fr: 'Traitement orthodontique complet', ar: 'علاج تقويم أسنان كامل', en: 'Complete orthodontic treatment' },
-      categorie: 'ortho',
-      imageBefore: 'https://placehold.co/800x600/dcdcdc/666666?text=Avant',
-      imageAfter: 'https://placehold.co/800x600/f0f0f0/666666?text=Apr%C3%A8s',
+      titre: { fr: 'Facettes céramiques - Harmonisation du sourire', ar: 'قشور خزفية - تناسق الابتسامة', en: 'Ceramic veneers - Smile harmonisation' },
+      description: { fr: 'Harmonisation complète du sourire avec facettes fines', ar: 'تنسيق الابتسامة بقشور رقيقة لجمال طبيعي', en: 'Harmonised smile with thin veneers' },
+      categorie: 'aesthetic',
+      imageBefore: '/images/gallery/veneers-before.png',
+      imageAfter: '/images/gallery/veneers-after.png',
+      featured: true,
       ordre: 4,
       actif: true
     },
     {
-      titre: { fr: 'Implants dentaires - Pose réussie', ar: 'زراعة الأسنان - نجاح الزرع', en: 'Dental implants - Successful placement' },
-      description: { fr: 'Restauration complète avec implants', ar: 'ترميم كامل بالزرعات', en: 'Complete restoration with implants' },
-      categorie: 'implant',
-      imageBefore: 'https://placehold.co/800x600/e5e5e5/888888?text=Avant+Implants',
-      imageAfter: 'https://placehold.co/800x600/fafafa/888888?text=Apr%C3%A8s+Implants',
+      titre: { fr: 'Composite esthétique - Reconstruction invisible', ar: 'ترميم تجميلي - إعادة بناء غير مرئية', en: 'Aesthetic bonding - Invisible restoration' },
+      description: { fr: 'Reconstruction d\'un bord de dent ébréché, invisible et durable', ar: 'ترميم حافة سن مكسورة بشكل متين', en: 'Chipped tooth edge rebuilt' },
+      categorie: 'aesthetic',
+      imageBefore: '/images/gallery/composite-before.png',
+      imageAfter: '/images/gallery/composite-after.png',
+      featured: false,
       ordre: 5,
       actif: true
     },
     {
-      titre: { fr: 'Implants - Sourire retrouvé', ar: 'الزرعات - ابتسامة مستعادة', en: 'Implants - Smile restored' },
-      description: { fr: 'Remplacement de dents manquantes', ar: 'استبدال الأسنان المفقودة', en: 'Missing teeth replacement' },
-      categorie: 'implant',
-      imageBefore: 'https://placehold.co/800x600/d8d8d8/777777?text=Avant',
-      imageAfter: 'https://placehold.co/800x600/f8f8f8/777777?text=Apr%C3%A8s',
+      titre: { fr: 'Blanchiment - Transformation éclatante', ar: 'تبييض - تحول مشرق', en: 'Whitening - Brilliant transformation' },
+      description: { fr: 'Sourire éclatant et naturel après traitement', ar: 'ابتسامة مشرقة بعد العلاج', en: 'Radiant smile after treatment' },
+      categorie: 'whitening',
+      imageBefore: '/images/gallery/whitening-before.jpg',
+      imageAfter: '/images/gallery/whitening-after.jpg',
+      featured: false,
       ordre: 6,
       actif: true
     }
