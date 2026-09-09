@@ -75,7 +75,8 @@ export async function getAvailableSlots(raw: {
     },
     select: {
       dateDebut: true,
-      dateFin: true
+      dateFin: true,
+      statut: true
     }
   });
 
@@ -271,7 +272,7 @@ export async function requestBooking(raw: unknown, locale: string = 'fr'): Promi
 
     const formattedDate = longDateFmt.format(startDate);
     const formattedTime = `${timeFmt.format(startDate)} – ${timeFmt.format(endDate)}`;
-    const motifLabel = getContenu(motifRecord.nom, locale);
+    const motifLabel = getContenu(motifRecord.nom as any, locale);
     const durationLabel = locale === 'ar'
       ? `${dureeMinutes} دقيقة`
       : locale === 'en'

@@ -255,7 +255,7 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
                     />
                     <Tooltip
                       contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '8px' }}
-                      formatter={(value: any, name: string, props: any) => [value, getContenu(props.payload.nom, locale)]}
+                      formatter={(value: any, name: string | number | undefined, props: any) => [value, props?.payload?.nom ? getContenu(props.payload.nom, locale) : name?.toString() || '']}
                     />
                     <Bar dataKey="count" fill={COLORS.primary} radius={[0, 4, 4, 0]} />
                   </BarChart>
@@ -276,7 +276,7 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
                       cx="50%"
                       cy="50%"
                       outerRadius={100}
-                      label={(entry) => `${((entry.revenue / stats.services.byRevenue.reduce((sum: number, item: any) => sum + item.revenue, 0)) * 100).toFixed(0)}%`}
+                      label={(entry: any) => `${((entry.revenue / stats.services.byRevenue.reduce((sum: number, item: any) => sum + item.revenue, 0)) * 100).toFixed(0)}%`}
                     >
                       {stats.services.byRevenue.map((entry: any, index: number) => (
                         <Cell key={`cell-${index}`} fill={COLORS.chart[index % COLORS.chart.length]} />
@@ -284,7 +284,7 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
                     </Pie>
                     <Tooltip
                       contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '8px' }}
-                      formatter={(value: any, name: string, props: any) => [`${value.toFixed(2)} DH`, getContenu(props.payload.nom, locale)]}
+                      formatter={(value: any, name: string | number | undefined, props: any) => [`${value.toFixed(2)} DH`, props?.payload?.nom ? getContenu(props.payload.nom, locale) : name?.toString() || '']}
                     />
                     <Legend
                       formatter={(value, entry: any) => getContenu(entry.payload.nom, locale).substring(0, 25)}
@@ -334,12 +334,18 @@ export function StatisticsClient({ stats, locale }: StatisticsClientProps) {
                     <XAxis
                       dataKey="day"
                       tick={{ fill: '#6B7280', fontSize: 12 }}
-                      tickFormatter={(value) => dayNames[value].substring(0, 3)}
+                      tickFormatter={(value: any) => {
+                        const dayName = dayNames[value as keyof typeof dayNames];
+                        return typeof dayName === 'string' ? dayName.substring(0, 3) : String(value);
+                      }}
                     />
                     <YAxis tick={{ fill: '#6B7280', fontSize: 12 }} />
                     <Tooltip
                       contentStyle={{ backgroundColor: '#fff', border: '1px solid #E5E7EB', borderRadius: '8px' }}
-                      labelFormatter={(value) => dayNames[value]}
+                      labelFormatter={(value: any) => {
+                        const dayName = dayNames[value as keyof typeof dayNames];
+                        return typeof dayName === 'string' ? dayName : String(value);
+                      }}
                     />
                     <Bar dataKey="count" fill={COLORS.accent} radius={[4, 4, 0, 0]} />
                   </BarChart>

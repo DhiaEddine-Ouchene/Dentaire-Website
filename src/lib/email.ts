@@ -1,7 +1,18 @@
 import { Resend } from 'resend';
 import { siteConfig } from '@/config/site';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialisation lazy de Resend pour éviter l'erreur au build si RESEND_API_KEY n'est pas défini
+let resend: Resend | null = null;
+
+function getResendClient(): Resend | null {
+  if (!process.env.RESEND_API_KEY) {
+    return null;
+  }
+  if (!resend) {
+    resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return resend;
+}
 
 type AppointmentEmailData = {
   patientName: string;
@@ -19,7 +30,9 @@ type AppointmentEmailData = {
  * Envoie un email de confirmation de rendez-vous automatiquement
  */
 export async function sendAppointmentConfirmationEmail(data: AppointmentEmailData): Promise<boolean> {
-  if (!process.env.RESEND_API_KEY) {
+  const resendClient = getResendClient();
+
+  if (!resendClient) {
     console.warn('⚠️ RESEND_API_KEY non configuré - email non envoyé');
     return false;
   }
@@ -149,7 +162,7 @@ export async function sendAppointmentConfirmationEmail(data: AppointmentEmailDat
               <p style="margin: 0 0 8px 0; color: #6b7280; font-size: 14px;">${siteConfig.name}</p>
               <p style="margin: 0 0 8px 0; color: #9ca3af; font-size: 13px;">${siteConfig.address}</p>
               <p style="margin: 0; color: #9ca3af; font-size: 13px;">
-                ${siteConfig.phone} • ${siteConfig.email}
+                ${siteConfig.phoneDisplay} • ${siteConfig.email}
               </p>
             </td>
           </tr>
@@ -163,7 +176,7 @@ export async function sendAppointmentConfirmationEmail(data: AppointmentEmailDat
   `;
 
   try {
-    await resend.emails.send({
+    await resendClient.emails.send({
       from: `${siteConfig.name} <noreply@${process.env.RESEND_DOMAIN || 'dentaire.com'}>`,
       to: data.patientEmail,
       subject,

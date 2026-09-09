@@ -49,10 +49,10 @@ export async function sendAppointmentConfirmationWhatsApp(data: AppointmentWhats
     : `\n💡 Besoin de modifier ou d'annuler ?\nVous pouvez gérer votre rendez-vous jusqu'à 24h avant :\n${data.cancelUrl}`;
 
   const footer = isArabic
-    ? `\n\n${siteConfig.name}\n📍 ${siteConfig.address}\n📞 ${siteConfig.phone}`
+    ? `\n\n${siteConfig.name}\n📍 ${siteConfig.address}\n📞 ${siteConfig.phoneDisplay}`
     : isEnglish
-    ? `\n\n${siteConfig.name}\n📍 ${siteConfig.address}\n📞 ${siteConfig.phone}`
-    : `\n\n${siteConfig.name}\n📍 ${siteConfig.address}\n📞 ${siteConfig.phone}`;
+    ? `\n\n${siteConfig.name}\n📍 ${siteConfig.address}\n📞 ${siteConfig.phoneDisplay}`
+    : `\n\n${siteConfig.name}\n📍 ${siteConfig.address}\n📞 ${siteConfig.phoneDisplay}`;
 
   const message = `${greeting}
 

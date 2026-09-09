@@ -12,6 +12,16 @@ import { routing } from '@/i18n/routing';
  * Actions admin (PROMPT 10 + 11) : authentification et gestion des rendez-vous.
  */
 
+/** Génère un code de référence court et lisible (ex: RDV-4F82A) */
+function generateReferenceCode(): string {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; // Évite confusion 0/O, 1/I
+  let code = '';
+  for (let i = 0; i < 5; i++) {
+    code += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return `RDV-${code}`;
+}
+
 // Schéma de validation pour un rendez-vous manuel
 const appointmentInput = z.object({
   motifId: z.string().uuid(),
@@ -100,6 +110,7 @@ export async function createAppointment(
       data: {
         patientId: patient.id,
         motifId: motif.id,
+        referenceCode: generateReferenceCode(),
         dateDebut,
         dateFin,
         duree: motif.dureeDefaut,
