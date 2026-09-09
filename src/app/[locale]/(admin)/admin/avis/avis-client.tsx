@@ -47,15 +47,22 @@ export function AvisClient({ reviews, locale }: AvisClientProps) {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm(locale === 'ar' ? 'هل أنت متأكد من الحذف؟' : locale === 'en' ? 'Are you sure you want to delete?' : 'Êtes-vous sûr de vouloir supprimer ?')) {
-      setLoading(id);
-      const result = await deleteReview(id);
-      setLoading(null);
-      if (result.success) {
-        window.location.reload();
-      } else {
-        alert(result.error);
-      }
+    const message =
+      locale === 'ar'
+        ? 'هل أنت متأكد من الحذف؟'
+        : locale === 'en'
+        ? 'Are you sure you want to delete this review?'
+        : 'Êtes-vous sûr de vouloir supprimer cet avis ?';
+
+    if (!confirm(message)) return;
+
+    setLoading(id);
+    const result = await deleteReview(id);
+    setLoading(null);
+    if (result.success) {
+      window.location.reload();
+    } else {
+      alert(result.error);
     }
   };
 

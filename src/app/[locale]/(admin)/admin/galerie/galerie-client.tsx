@@ -39,15 +39,22 @@ export function GalerieClient({ cases, locale }: GalerieClientProps) {
   };
 
   const handleDelete = async (id: string) => {
-    if (!confirm(locale === 'ar' ? 'هل أنت متأكد من الحذف؟' : locale === 'en' ? 'Are you sure you want to delete?' : 'Êtes-vous sûr de vouloir supprimer ?')) {
-      setLoading(true);
-      const result = await deleteGalleryCase(id);
-      setLoading(false);
-      if (result.success) {
-        window.location.reload();
-      } else {
-        alert(result.error);
-      }
+    const message =
+      locale === 'ar'
+        ? 'هل أنت متأكد من الحذف؟'
+        : locale === 'en'
+        ? 'Are you sure you want to delete this case?'
+        : 'Êtes-vous sûr de vouloir supprimer cette réalisation ?';
+
+    if (!confirm(message)) return;
+
+    setLoading(true);
+    const result = await deleteGalleryCase(id);
+    setLoading(false);
+    if (result.success) {
+      window.location.reload();
+    } else {
+      alert(result.error);
     }
   };
 
